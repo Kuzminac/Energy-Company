@@ -1,0 +1,167 @@
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .left {
+    @include flexCenter();
+    flex-direction: column;
+    background: $blue;
+    color: white;
+
+    .content {
+      max-width: 35rem;
+      margin-left: 14.375rem;
+      .line {
+        width: 6.875rem;
+        height: 0.625rem;
+        background: white;
+        border-radius: 30px;
+      }
+
+      h2 {
+        font-size: 2.875rem;
+        font-weight: 400;
+        margin: 1.875rem 0;
+      }
+
+      p {
+        font-size: 1.125rem;
+        font-weight: 500;
+        line-height: 1.75rem;
+      }
+
+      button {
+        margin-top: 1.875rem;
+        width: 16.125rem;
+        height: 3.25rem;
+      }
+    }
+  }
+
+  .right {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.divisions {
+  max-width: 35rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 2.5rem 1.25rem 0;
+
+  .division {
+    margin-bottom: 2.5rem;
+    display: flex;
+
+    .line {
+      height: 3.75rem;
+      width: 0.625rem;
+      background: $brick;
+      border-radius: 30px;
+    }
+
+    .one {
+      background: $brick;
+    }
+
+    .two {
+      background: black;
+    }
+
+    .three {
+      background: $blue;
+    }
+
+    .four {
+      background: $teal;
+    }
+
+    .five {
+      background: $silver;
+    }
+
+    .headings {
+      margin-left: 10px;
+      max-width: 16.25rem;
+      h4 {
+        color: $red;
+        font-size: 1.625rem;
+        font-weight: 800;
+      }
+
+      .sub {
+        margin-top: 10px;
+        font-weight: 400;
+        color: $charcoal;
+      }
+    }
+  }
+}
+
+@media (max-width: 1300px) {
+  section {
+    display: flex;
+    flex-direction: column;
+
+    .left {
+      align-items: flex-start;
+
+      .content {
+        max-width: 100%;
+        margin: 2.5rem 1.25rem;
+
+        h2 {
+          font-size: 2.5rem;
+          font-weight: 400;
+          margin: 1.25rem 0;
+        }
+
+        p {
+          line-height: 38px;
+        }
+      }
+    }
+
+    .right {
+      .divisions {
+        max-width: 90%;
+        .headings {
+          max-width: 100%;
+
+          h4 {
+            font-size: 1.375rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 595px) {
+  section {
+    h2 {
+      font-size: 1.875rem;
+    }
+    p {
+      font-size: 1rem;
+      line-height: 1.625rem;
+    }
+    button {
+      min-width: 100%;
+    }
+    .right {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .divisions {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

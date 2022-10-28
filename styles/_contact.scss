@@ -1,0 +1,125 @@
+#contact {
+  @include flexCenter();
+  flex-direction: column;
+  background: $lightsilver;
+  padding: 4.375rem 14.375rem;
+
+  .line {
+    width: 110px;
+    height: 10px;
+    background: $blue;
+    border-radius: 30px;
+  }
+
+  h2 {
+    margin: 1.875rem 0;
+    font-size: 2.875rem;
+    font-weight: 400;
+  }
+
+  .row {
+    display: flex;
+    gap: 2.5rem;
+    margin-bottom: 20px;
+
+    .element {
+      min-width: 37.5rem;
+    }
+
+    h5 {
+      font-size: 1rem;
+      font-weight: 400;
+      margin-bottom: 6px;
+    }
+
+    input {
+      width: 100%;
+      border: 1px solid $charcoal;
+      border-radius: 8px;
+      height: 3.125rem;
+      padding-left: 1.25rem;
+    }
+
+    .message {
+      min-width: 77.5rem;
+
+      textarea {
+        width: 100%;
+        border: 1px solid $charcoal;
+        border-radius: 8px;
+        height: 9.375rem;
+        padding: 1.25rem;
+      }
+    }
+  }
+  .last {
+    display: flex;
+    align-items: center;
+    min-width: 75rem;
+    justify-content: space-between;
+
+    button {
+      width: 9.25rem;
+      height: 3.25rem;
+    }
+  }
+}
+
+@media (max-width: 1250px) {
+  #contact {
+    padding: 2.5rem 1.25rem;
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    form {
+      width: 100%;
+    }
+
+    .row {
+      min-width: 100%;
+      gap: 1.25rem;
+
+      .element {
+        min-width: 48%;
+        max-width: 100%;
+      }
+
+      input {
+        min-width: 100%;
+      }
+
+      .message {
+        min-width: 100%;
+
+        textarea {
+          padding: 1rem;
+        }
+      }
+    }
+    .last {
+      button {
+        min-width: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  #contact {
+    h2 {
+      font-size: 1.875rem;
+    }
+    .row {
+      flex-direction: column;
+    }
+    .last {
+      flex-direction: column;
+      align-items: flex-start;
+      button {
+        width: 100%;
+      }
+    }
+  }
+}

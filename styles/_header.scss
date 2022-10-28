@@ -1,0 +1,171 @@
+nav {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $silver;
+
+  .logo {
+    @include flexCenter();
+    margin-left: 14.375rem;
+    margin-top: 0.781rem;
+    margin-bottom: 0.781rem;
+
+    .logo-icon {
+      height: 4.688rem;
+    }
+
+    h3 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.444rem;
+      margin-left: 1.304rem;
+      font-weight: 800;
+      color: $red;
+
+      span {
+        font-weight: 600;
+        color: $charcoal;
+      }
+    }
+  }
+
+  .menu-btn {
+    display: none;
+  }
+
+  .nav-list {
+    margin-right: 14.375rem;
+    list-style: none;
+    @include flexAround();
+
+    li {
+      position: relative;
+      margin-right: 1.25rem;
+
+      .dropdown {
+        list-style: none;
+        position: absolute;
+        top: 1.5rem;
+        left: -2.7rem;
+        display: none;
+        background: $lightsilver;
+        text-align: center;
+        box-shadow: 0 5px 6px $silver;
+
+        li {
+          width: 12rem;
+          padding: 0.625rem 0.75rem 0;
+          font-size: 0.875rem;
+          font-weight: 500;
+
+          &:last-child {
+            padding-bottom: 0.625rem;
+          }
+        }
+      }
+
+      &:hover {
+        .chevron {
+          transform: rotate(-45deg);
+          top: 0.25rem;
+        }
+        .dropdown {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $charcoal;
+  font-weight: 500;
+}
+
+//  MEDIA QUERIES
+@media (max-width: 1315px) {
+  nav {
+    .logo {
+      margin: 1.25rem;
+      .logo-icon {
+        height: 3.75rem;
+        margin-right: 1.043rem;
+      }
+      h3 {
+        font-size: 1.5rem;
+        margin-left: 0;
+      }
+    }
+    ul {
+      display: none;
+    }
+    .menu-btn {
+      display: flex;
+    }
+
+    .nav-list {
+      display: none;
+    }
+
+    .nav-list.open {
+      position: absolute;
+      top: 6.4rem;
+      width: 97.5%;
+      margin: 0 1.25rem;
+
+      display: flex;
+      flex-direction: column;
+
+      li {
+        padding: 1.563rem;
+        width: 100%;
+        border-bottom: 2px solid #d9d9d9;
+
+        &:last-of-type {
+          border: none;
+        }
+
+        a {
+          font-weight: bold;
+          font-size: 18px;
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .chevron {
+          color: $charcoal;
+          margin: 0;
+          height: 0.9em;
+          width: 0.9em;
+        }
+
+        .dropdown {
+          position: static;
+          width: 100%;
+          margin: 0.625rem 0;
+          background: none;
+          text-align: left;
+          box-shadow: none;
+
+          li {
+            width: 100%;
+            padding: 0.625rem 0.75rem 0;
+            margin: 0.563rem;
+            font-size: 0.875rem;
+            font-weight: 400;
+            border: none;
+
+            a {
+              font-size: 0.875rem;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+  .full-height {
+    min-height: 100vh;
+    align-items: baseline;
+  }
+}

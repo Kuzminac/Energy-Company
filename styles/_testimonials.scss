@@ -1,0 +1,237 @@
+#testimonials {
+  background: $brick;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .text {
+    @include flexCenter();
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 37.5rem;
+    margin: 10.866rem 0;
+    margin-left: auto;
+  }
+
+  .line {
+    width: 110px;
+    height: 10px;
+    background: $silver;
+    border-radius: 30px;
+  }
+
+  h2 {
+    font-size: 2.875rem;
+    font-weight: 400;
+    margin: 1.875rem 0;
+  }
+
+  p {
+    max-width: 35rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 28px;
+    margin-bottom: 1.875rem;
+  }
+
+  button {
+    background: white;
+    color: $brick;
+    min-width: 17.5rem;
+    .arrow-right {
+      border-top: 3px solid $brick;
+      border-left: 3px solid $brick;
+
+      &::after {
+        background-color: $brick;
+      }
+    }
+  }
+
+  .testimonials {
+    @include flexCenter();
+    justify-content: flex-start;
+  }
+
+  .testimonial {
+    max-width: 37.5rem;
+    background: white;
+    padding: 30px;
+    box-shadow: 4px 4px 25px 1px rgba(0, 0, 0, 0.3);
+  }
+
+  .quote {
+    width: 100%;
+    .close {
+      display: flex;
+      justify-content: end;
+
+      img {
+        transform: rotate(0.5turn);
+        display: flex;
+        justify-content: end;
+      }
+    }
+    img {
+      width: 5rem;
+    }
+    h4 {
+      color: $charcoal;
+      font-size: 1.75rem;
+      font-weight: 500;
+      line-height: 2.625rem;
+      margin: 15px 0;
+    }
+  }
+
+  .avatar {
+    max-width: 22.063rem;
+    display: flex;
+    padding-top: 1.25rem;
+
+    img {
+      height: 5.438rem;
+      width: 5.438rem;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    div {
+      font-size: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      margin-left: 1.25rem;
+      color: black;
+      p {
+        margin: 2px 0;
+      }
+      #person-job {
+        font-weight: 400;
+      }
+    }
+  }
+
+  .slider {
+    width: 100%;
+    @include flexCenter();
+    gap: 13px;
+    margin-top: 1.875rem;
+  }
+
+  .arrowBtn {
+    display: block;
+    min-width: 0;
+    border: none;
+  }
+
+  .arrow-right.teal {
+    margin-left: 12px;
+    width: 35px;
+    height: 35px;
+    border-top: 5px solid $teal;
+    border-left: 5px solid $teal;
+    transform: rotate(135deg);
+    &.prev {
+      transform: rotate(-45deg);
+      margin-left: 0;
+      margin-right: 12px;
+    }
+    &.locked {
+      opacity: 0.5;
+    }
+    &::after {
+      background-color: $teal;
+      width: 5px;
+      height: 45px;
+      transform: rotate(45deg) translate(14px, 1px);
+    }
+  }
+
+  .circle {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: rgba(231, 49, 55, 0.5);
+  }
+
+  .circle.active {
+    width: 19px;
+    height: 19px;
+    background: rgba(231, 49, 55, 1);
+  }
+}
+
+@media (max-width: 1250px) {
+  #testimonials {
+    @include flexCenter();
+    flex-direction: column;
+
+    .text {
+      @include flexCenter();
+      flex-direction: column;
+      align-items: flex-start;
+      min-width: 100%;
+      margin: 0;
+      padding: 2.5rem 1.25rem;
+    }
+    p {
+      min-width: 100%;
+    }
+
+    .testimonials {
+      @include flexCenter();
+      width: 100%;
+      padding: 2.5rem 1.25rem;
+      padding-top: 0;
+    }
+
+    .testimonial {
+      min-width: 100%;
+      background: white;
+      padding: 30px;
+      box-shadow: 4px 4px 25px 1px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  #testimonials {
+    h2 {
+      font-size: 1.875rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+    button {
+      width: 100%;
+    }
+    .testimonials {
+      h4 {
+        font-size: 1.25rem;
+        font-weight: 500;
+        line-height: 2.625rem;
+        margin: 10px 0;
+      }
+      img {
+        width: 4rem;
+      }
+      .avatar {
+        img {
+          width: 4rem;
+          height: 4rem;
+        }
+      }
+      .slider {
+        width: 100%;
+        @include flexCenter();
+        gap: 10px;
+        margin-top: 1.875rem;
+      }
+      .arrowBtn {
+        max-width: 3rem;
+      }
+    }
+  }
+}

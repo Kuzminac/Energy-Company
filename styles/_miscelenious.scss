@@ -1,0 +1,130 @@
+//  CHEVRON
+.chevron {
+  color: $brick;
+  border-style: solid;
+  border-width: 0.12em 0.12em 0 0;
+  margin: 4px;
+  content: "";
+  display: inline-block;
+  height: 0.35em;
+  width: 0.35em;
+  left: 0.15em;
+  top: 0.15rem;
+  position: relative;
+  transform: rotate(135deg);
+  vertical-align: top;
+}
+
+//  BURGER MENU
+.menu-btn {
+  position: absolute;
+  @include flexCenter();
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  top: 1.875rem;
+  right: 1.25rem;
+}
+
+.menu-btn__burger {
+  width: 32px;
+  height: 4.2px;
+  background: $charcoal;
+  border-radius: 3px;
+  transition: all 0.5s ease-in-out;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 32px;
+    height: 4.2px;
+    background: $charcoal;
+    border-radius: 3px;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &::before {
+    transform: translateY(-9px);
+  }
+
+  &::after {
+    transform: translateY(9px);
+  }
+}
+
+//  Animation
+.menu-btn.open {
+  transform: translateX(-12px);
+}
+
+.menu-btn.open .menu-btn__burger {
+  transform: translateX(-32px);
+  background: transparent;
+
+  &::before {
+    transform: rotate(45deg) translate(35px, -35px);
+  }
+
+  &::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+  }
+}
+
+//  BUTTON
+.btn {
+  width: 12.563rem;
+  height: 3.25rem;
+  background: $red;
+  border: none;
+  border-radius: 9px;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: white;
+    color: $red;
+    border: 1.5px solid $red;
+  }
+
+  .arrow-right {
+    display: block;
+    margin-left: 12px;
+    width: 15px;
+    height: 15px;
+    border-top: 3px solid rgb(255, 255, 255);
+    border-left: 3px solid rgb(255, 255, 255);
+    transform: rotate(135deg);
+
+    &::after {
+      content: "";
+      display: block;
+      width: 3px;
+      height: 20px;
+      background-color: rgb(255, 255, 255);
+      transform: rotate(-45deg) translate(6px, 2px);
+      left: 0;
+      top: 0;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    background: white;
+    color: $red;
+    border: 2px solid $red;
+    .arrow-right {
+      border-top: 3px solid $red;
+      border-left: 3px solid $red;
+
+      &::after {
+        background-color: $red;
+      }
+    }
+  }
+}

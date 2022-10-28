@@ -1,0 +1,125 @@
+#stats {
+  background: rgba(62, 163, 151, 0.3);
+  @include flexCenter();
+  flex-direction: column;
+  text-align: center;
+
+  .heading {
+    margin-top: 4.375rem;
+    @include flexCenter();
+    flex-direction: column;
+
+    .line {
+      width: 110px;
+      height: 10px;
+      background: $charcoal;
+      border-radius: 30px;
+    }
+
+    h2 {
+      margin: 1.875rem 0;
+      font-weight: 400;
+      font-size: 2.875rem;
+    }
+  }
+
+  .data {
+    margin: 30px 0;
+    max-width: 75rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+
+    div {
+      margin: 50px 0;
+      width: 24.583rem;
+      @include flexCenter();
+      flex-direction: column;
+    }
+
+    h6 {
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: 400;
+      line-height: 38px;
+      max-width: 9.188rem;
+    }
+
+    h1 {
+      font-size: 6.25rem;
+      font-weight: 500;
+    }
+    span {
+      font-size: 3.75rem;
+    }
+  }
+
+  .bottom {
+    @include flexCenter();
+    flex-direction: column;
+    margin-bottom: 4.375rem;
+    max-width: 27.5rem;
+    p {
+      margin-bottom: 1.875rem;
+      font-size: 1.125rem;
+      line-height: 28px;
+      color: $charcoal;
+    }
+  }
+}
+
+@media (max-width: 1250px) {
+  #stats {
+    .heading {
+      h2 {
+        font-size: 2.5rem;
+        margin: 1.25rem 0;
+      }
+    }
+    .data {
+      min-width: 45.5rem;
+      margin: 0 1.25rem;
+      gap: 0;
+      div {
+        max-width: 15.167rem;
+        margin: 2.5rem 0;
+      }
+      h6 {
+        font-size: 1.125rem;
+        line-height: 24px;
+      }
+      h1 {
+        font-weight: 400;
+        font-size: 4.375rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 730px) {
+  #stats {
+    .heading {
+      h2 {
+        font-size: 1.875rem;
+      }
+    }
+    .data {
+      @include flexCenter();
+      flex-direction: column;
+      div {
+        margin: 1.875rem 0;
+      }
+      h6 {
+        font-size: 1.125rem;
+        letter-spacing: 4%;
+      }
+      h1 {
+        font-weight: 400;
+      }
+    }
+    .bottom {
+      margin: 40px 20px;
+      margin-top: 0;
+    }
+  }
+}

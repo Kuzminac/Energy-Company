@@ -1,0 +1,103 @@
+footer {
+  @include flexCenter();
+  flex-direction: column;
+
+  .upper {
+    padding: 10px;
+    min-width: 100%;
+    @include flexCenter();
+    justify-content: space-around;
+    .logo {
+      @include flexCenter();
+      img {
+        height: 3.375rem;
+      }
+      h3 {
+        margin-left: 10px;
+        font-size: 1rem;
+        color: $red;
+        font-weight: 700;
+      }
+      span {
+        font-weight: 600;
+        color: $charcoal;
+      }
+    }
+    .social {
+      width: 5.5rem;
+      color: $blue;
+      @include flexCenter();
+      justify-content: space-around;
+    }
+
+    ul {
+      list-style: none;
+      @include flexCenter();
+
+      gap: 20px;
+      li {
+        font-family: "Quicksand", sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+      }
+    }
+  }
+  .lower {
+    width: 100%;
+    padding: 10px;
+    @include flexCenter();
+
+    background: $brick;
+    color: white;
+    h6 {
+      font-weight: 400;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  footer {
+    position: relative;
+    .upper {
+      justify-content: space-between;
+    }
+    .social {
+      position: absolute;
+      right: 3%;
+      top: 20%;
+    }
+    ul {
+      position: absolute;
+      top: 40%;
+      right: 4.2%;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  footer {
+    position: static;
+    .upper {
+      justify-content: center;
+      flex-direction: column;
+      .logo {
+        margin-top: 10px;
+      }
+
+      .social {
+        position: static;
+        margin: 20px 0;
+      }
+      ul {
+        position: static;
+        margin-bottom: 10px;
+      }
+    }
+    .lower {
+      h6 {
+        font-size: 12px;
+        text-align: center;
+      }
+    }
+  }
+}

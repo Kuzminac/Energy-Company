@@ -1,0 +1,93 @@
+main {
+  min-height: 90vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .left {
+    background: url(../img/img_bkg.png);
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  .content {
+    max-width: 37.5rem;
+    margin: 0 2.5rem;
+
+    .line {
+      background: $blue;
+      width: 6.875rem;
+      height: 0.625rem;
+      border-radius: 30px;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 400;
+      margin: 1.875rem 0;
+    }
+
+    p {
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+      color: $charcoal;
+    }
+
+    button {
+      margin-top: 1.875rem;
+    }
+  }
+}
+
+//  MEDIA QUERIES
+@media (max-width: 1300px) {
+  main {
+    display: flex;
+    min-height: 0vh;
+    flex-direction: column;
+
+    .left {
+      min-height: 25rem;
+      background-size: cover;
+    }
+
+    .right {
+      .content {
+        margin: 2.5rem 1.25rem;
+
+        h1 {
+          font-size: 3.125rem;
+        }
+
+        p {
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  main {
+    min-height: 0vh;
+    .right {
+      .content {
+        h1 {
+          font-size: 2.25rem;
+        }
+        p {
+          font-size: 1.125rem;
+        }
+        .btn {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
